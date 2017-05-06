@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#37474F"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.musicplayer.genres">
+
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="16dp">
+
+       <TextView
+           android:id="@+id/pop"
+           android:layout_width="wrap_content"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:textSize="48dp"
+           android:textColor="#FFFF"
+           android:onClick="pop"
+           android:text="Pop"/>
+
+       <TextView
+           android:id="@+id/rock"
+           android:layout_width="wrap_content"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:textSize="48dp"
+           android:textColor="#FFFF"
+           android:onClick="rock"
+           android:text="Rock"/>
+       <TextView
+           android:id="@+id/rap"
+           android:layout_width="wrap_content"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:textSize="48dp"
+           android:onClick="rap"
+           android:textColor="#FFFF"
+           android:text="Rap"/>
+
+
+   </LinearLayout>
+</RelativeLayout>
