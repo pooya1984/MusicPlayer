@@ -8,21 +8,28 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class rock extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Local extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rock);
+        setContentView(R.layout.activity_local);
+
+        //TODO: Add ArrayList for Words
+        ArrayList<String> genres = new ArrayList<String>();
+        genres.add("music one");
+        genres.add("music two");
+        genres.add("music three");
     }
 
-
-    // menu code ///////////////////////////////////////////////////
+  // menu code //////////////////////////////////////////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_manu, menu);
+        inflater.inflate(R.menu.main_menu, menu);
         return true;
     }
 
@@ -33,16 +40,13 @@ public class rock extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"This app is a student project for Udacity",Toast.LENGTH_LONG).show();
                 return true;
             case R.id.local_id:
-                startActivity(new Intent(this, local.class));
+                startActivity(new Intent(this, Local.class));
                 return true;
             case R.id.genres_id:
-                startActivity(new Intent(this, genres.class));
+                startActivity(new Intent(this, Genres.class));
                 return true;
             default:
         }
         return super.onOptionsItemSelected(item);}
-    ///////////////////////////////////////////////////////////////////
-
-
-
+    //////////////////////////////////////////////////////////////////////
 }

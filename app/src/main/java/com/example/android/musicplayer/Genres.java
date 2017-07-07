@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class genres extends AppCompatActivity {
+public class Genres extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +44,10 @@ public class genres extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"This app is a student project for Udacity",Toast.LENGTH_LONG).show();
                 return true;
             case R.id.local_id:
-                startActivity(new Intent(this, local.class));
+                startActivity(new Intent(this, Local.class));
                 return true;
             case R.id.genres_id:
-                startActivity(new Intent(this, genres.class));
+                startActivity(new Intent(this, Genres.class));
                 return true;
             default:
         }
@@ -61,7 +61,7 @@ public class genres extends AppCompatActivity {
         pop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(genres.this, pop.class);
+                Intent numbersIntent = new Intent(Genres.this, Pop.class);
                 startActivity(numbersIntent);
             }
         });
@@ -72,7 +72,7 @@ public class genres extends AppCompatActivity {
         rock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(genres.this, rock.class);
+                Intent numbersIntent = new Intent(Genres.this, Rock.class);
                 startActivity(numbersIntent);
             }
         });
@@ -83,7 +83,7 @@ public class genres extends AppCompatActivity {
         rap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(genres.this, rap.class);
+                Intent numbersIntent = new Intent(Genres.this, Rap.class);
                 startActivity(numbersIntent);
             }
         });

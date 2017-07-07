@@ -8,12 +8,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class pop extends AppCompatActivity {
+public class Rock extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pop);
+        setContentView(R.layout.activity_rock);
     }
 
 
@@ -33,10 +33,10 @@ public class pop extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"This app is a student project for Udacity",Toast.LENGTH_LONG).show();
                 return true;
             case R.id.local_id:
-                startActivity(new Intent(this, local.class));
+                startActivity(new Intent(this, Local.class));
                 return true;
             case R.id.genres_id:
-                startActivity(new Intent(this, genres.class));
+                startActivity(new Intent(this, Genres.class));
                 return true;
             default:
         }

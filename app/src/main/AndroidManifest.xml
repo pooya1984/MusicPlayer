@@ -16,11 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".genres" />
-        <activity android:name=".local" />
-        <activity android:name=".pop" />
-        <activity android:name=".rock" />
-        <activity android:name=".rap"></activity>
+        <activity android:name=".Genres" android:label="Genres"/>
+        <activity android:name=".Local"  android:label="Local" />
+        <activity android:name=".Pop"    android:label="Pop"  />
+        <activity android:name=".Rock"   android:label="Rock" />
+        <activity android:name=".Rap"    android:label="Rap" ></activity>
     </application>
 
 </manifest>
