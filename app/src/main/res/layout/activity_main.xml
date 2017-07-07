@@ -54,21 +54,21 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:textColor="#FFFFFF"
-            android:text="music one" />
+            android:text="RAP" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:textColor="#FFFFFF"
-            android:text="music two" />
+            android:text="ROCK" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:textColor="#FFFFFF"
-            android:text="music three" />
+            android:text="POP" />
     </LinearLayout>
 
     <LinearLayout

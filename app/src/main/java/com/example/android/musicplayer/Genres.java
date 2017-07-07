@@ -26,8 +26,6 @@ public class Genres extends AppCompatActivity {
         genres.add("Rap");
     }
 
-
-
     // menu code ///////////////////////////////////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
