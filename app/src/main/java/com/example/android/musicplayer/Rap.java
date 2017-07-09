@@ -22,7 +22,7 @@ public class Rap extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_manu, menu);
+        inflater.inflate(R.menu.main_menu, menu);
         return true;
     }
 
