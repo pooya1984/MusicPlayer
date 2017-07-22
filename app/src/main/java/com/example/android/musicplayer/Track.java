@@ -58,4 +58,3 @@ public class Track {
         return mImageTrack;
     }
 }
-

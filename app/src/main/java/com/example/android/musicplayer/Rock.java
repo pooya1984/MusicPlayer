@@ -23,14 +23,13 @@ public class Rock extends AppCompatActivity {
         ArrayList<Track> tracks = new ArrayList<Track>();
 
         //Add the tracks to the list
-        tracks.add(new Track("Hard Wired","Metallica","ROCK", 0, R.drawable.maxresdefault));
+        tracks.add(new Track("Hard Wired", "Metallica", "ROCK", 0, R.drawable.maxresdefault));
 
         //Display the list by using a TrackListAdapter
         TrackListAdapter itemsAdapter = new TrackListAdapter(this, tracks);
         ListView listView = (ListView) findViewById(R.id.list_all_music);
         listView.setAdapter(itemsAdapter);
     }
-
 
 
     // menu code ///////////////////////////////////////////////////
@@ -49,7 +48,7 @@ public class Rock extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "This app is a student project for Udacity", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.search_id:
-                startActivity(new Intent(this, Local.class));
+                startActivity(new Intent(this, AllMusicActivity.class));
                 return true;
             case R.id.genres_id:
                 startActivity(new Intent(this, Genres.class));
@@ -58,7 +57,4 @@ public class Rock extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    ///////////////////////////////////////////////////////////////////
-
-
 }

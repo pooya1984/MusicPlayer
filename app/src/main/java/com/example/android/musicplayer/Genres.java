@@ -28,16 +28,16 @@ public class Genres extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected (MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar overflow menu
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             // Respond to a click on the "About" menu option
             case R.id.About_id:
-                Toast.makeText(getApplicationContext(),"This app is a student project for Udacity",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "This app is a student project for Udacity", Toast.LENGTH_LONG).show();
                 return true;
             // Respond to a click on the "Local" menu option
             case R.id.search_id:
-                startActivity(new Intent(this, Local.class));
+                startActivity(new Intent(this, AllMusicActivity.class));
                 return true;
             // Respond to a click on the "Genre" menu option
             case R.id.genres_id:
@@ -45,11 +45,10 @@ public class Genres extends AppCompatActivity {
                 return true;
             default:
         }
-        return super.onOptionsItemSelected(item);}
+        return super.onOptionsItemSelected(item);
+    }
 
-
-
-    public void pop (View view){
+    public void pop(View view) {
         TextView pop = (TextView) findViewById(R.id.pop);
         pop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +59,7 @@ public class Genres extends AppCompatActivity {
         });
     }
 
-    public void rock (View view){
+    public void rock(View view) {
         TextView rock = (TextView) findViewById(R.id.rock);
         rock.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +70,7 @@ public class Genres extends AppCompatActivity {
         });
     }
 
-    public void rap (View view){
+    public void rap(View view) {
         TextView rap = (TextView) findViewById(R.id.rap);
         rap.setOnClickListener(new View.OnClickListener() {
             @Override

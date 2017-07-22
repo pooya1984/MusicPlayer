@@ -7,4 +7,7 @@
     <string name="dollars">$</string>
     <string name="buyTrack">Send Song to Basket</string>
     <string name="genre_activity">This Page is for Genre</string>
+    <string name="playTrack">try another Time</string>
+    <string name="submit">submit</string>
+    <string name="total">total price</string>
 </resources>

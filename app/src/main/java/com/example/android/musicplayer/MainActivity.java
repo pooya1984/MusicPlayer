@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected (MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar overflow menu
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             // Respond to a click on the "About" menu option
             case R.id.About_id:
-                Toast.makeText(getApplicationContext(),"This app is a student project for Udacity",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "This app is a student project for Udacity", Toast.LENGTH_LONG).show();
                 return true;
             // Respond to a click on the "Local" menu option
             case R.id.search_id:
@@ -45,10 +45,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             default:
         }
-        return super.onOptionsItemSelected(item);}
+        return super.onOptionsItemSelected(item);
+    }
 
     // Set a onClickListener  on Search  Music by Genre
-    public void openGenresctivity (View view){
+    public void openGenresctivity(View view) {
         Button genres = (Button) findViewById(R.id.button_genre);
         genres.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,9 +58,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(numbersIntent);
             }
 
-        });}
+        });
+    }
+
     // Set a onClickListener  on Search  Music by AllMusic
-    public void openAllMusicActivity (View view){
+    public void openAllMusicActivity(View view) {
         Button local = (Button) findViewById(R.id.button_all_music);
         local.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,5 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(numbersIntent);
             }
 
-        });}
+        });
+    }
 }

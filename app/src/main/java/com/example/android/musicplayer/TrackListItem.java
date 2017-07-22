@@ -1,7 +1,9 @@
 package com.example.android.musicplayer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -54,7 +56,52 @@ public class TrackListItem extends AppCompatActivity {
                 trackPriceTextView.setText(getString(R.string.dollars) + trackPrice);
                 buyButton.setText(getString(R.string.buyTrack));
 
+                final Intent paymentIntent = new Intent(TrackListItem.this, PaymentActivity.class);
+
+                //Put the details of the Track Object into the intent
+                paymentIntent.putExtra("trackGenre", trackGenre);
+                paymentIntent.putExtra("singer", singer);
+                paymentIntent.putExtra("trackTitle", trackTitle);
+                paymentIntent.putExtra("trackImage", trackImage);
+                paymentIntent.putExtra("trackPrice", trackPrice);
+
+                // Set a click listener on listItemView
+                buyButton.setOnClickListener(new View.OnClickListener() {
+
+                    // The code in this method will be executed when the "Buy this track now" button is clicked on.
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(paymentIntent);
+                    }
+                });
             }
+            //If price is 0, so if it is already bought, hide the price but change the text of the button to "Play this track"
+            else {
+                //Hide the track price and the set the text of the button to "Play this track"
+                trackPriceTextView.setVisibility(View.GONE);
+                buyButton.setText(getString(R.string.playTrack));
+
+                //Create a new Intent for playing a track
+                final Intent paymentIntent = new Intent(TrackListItem.this, AllMusicActivity.class);
+
+                //Put the details of the Track Object into the intent
+                paymentIntent.putExtra("trackGenre", trackGenre);
+                paymentIntent.putExtra("singer", singer);
+                paymentIntent.putExtra("trackTitle", trackTitle);
+                paymentIntent.putExtra("trackImage", trackImage);
+                paymentIntent.putExtra("trackPrice", trackPrice);
+
+                // Set a click listener on "Play this track" button
+                buyButton.setOnClickListener(new View.OnClickListener() {
+
+                    // The code in this method will be executed when the "Play this track" button is clicked on.
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(paymentIntent);
+                    }
+                });
+            }
+
         }
     }
 }

@@ -23,14 +23,13 @@ public class Pop extends AppCompatActivity {
         ArrayList<Track> tracks = new ArrayList<Track>();
 
         //Add the tracks to the list
-        tracks.add(new Track("Work","Rihana","POP",0, R.drawable.rihana));
+        tracks.add(new Track("Work", "Rihana", "POP", 0, R.drawable.rihana));
 
         //Display the list by using a TrackListAdapter
         TrackListAdapter itemsAdapter = new TrackListAdapter(this, tracks);
         ListView listView = (ListView) findViewById(R.id.list_all_music);
         listView.setAdapter(itemsAdapter);
     }
-
 
     // menu code ///////////////////////////////////////////////////
     @Override
@@ -42,22 +41,19 @@ public class Pop extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected (MenuItem item){
-        switch (item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.About_id:
-                Toast.makeText(getApplicationContext(),"This app is a student project for Udacity",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "This app is a student project for Udacity", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.search_id:
-                startActivity(new Intent(this, Local.class));
+                startActivity(new Intent(this, AllMusicActivity.class));
                 return true;
             case R.id.genres_id:
                 startActivity(new Intent(this, Genres.class));
                 return true;
             default:
         }
-        return super.onOptionsItemSelected(item);}
-    ///////////////////////////////////////////////////////////////////
-
-
-
+        return super.onOptionsItemSelected(item);
+    }
 }
