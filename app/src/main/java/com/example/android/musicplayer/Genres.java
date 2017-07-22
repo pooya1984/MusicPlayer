@@ -10,26 +10,18 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 public class Genres extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_genres);
-
-        //TODO: Add ArrayList for Words
-        ArrayList<String> genres = new ArrayList<String>();
-        genres.add("Pop");
-        genres.add("Rock");
-        genres.add("Rap");
     }
 
-    // menu code ///////////////////////////////////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
+        // Inflate the menu options from the res/menu/main_menu.xml file.
+        // This adds menu items to the app bar.
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
         return true;
@@ -37,20 +29,23 @@ public class Genres extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected (MenuItem item){
+        // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()){
+            // Respond to a click on the "About" menu option
             case R.id.About_id:
                 Toast.makeText(getApplicationContext(),"This app is a student project for Udacity",Toast.LENGTH_LONG).show();
                 return true;
-            case R.id.local_id:
+            // Respond to a click on the "Local" menu option
+            case R.id.search_id:
                 startActivity(new Intent(this, Local.class));
                 return true;
+            // Respond to a click on the "Genre" menu option
             case R.id.genres_id:
                 startActivity(new Intent(this, Genres.class));
                 return true;
             default:
         }
         return super.onOptionsItemSelected(item);}
-    ///////////////////////////////////////////////////////////////////
 
 
 

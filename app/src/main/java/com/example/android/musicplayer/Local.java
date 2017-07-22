@@ -39,7 +39,7 @@ public class Local extends AppCompatActivity {
             case R.id.About_id:
                 Toast.makeText(getApplicationContext(),"This app is a student project for Udacity",Toast.LENGTH_LONG).show();
                 return true;
-            case R.id.local_id:
+            case R.id.search_id:
                 startActivity(new Intent(this, Local.class));
                 return true;
             case R.id.genres_id:

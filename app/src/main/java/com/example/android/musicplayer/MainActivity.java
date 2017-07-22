@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
+        // Inflate the menu options from the res/menu/main_menu.xml file.
+        // This adds menu items to the app bar.
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
         return true;
@@ -28,13 +29,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected (MenuItem item){
+        // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()){
+            // Respond to a click on the "About" menu option
             case R.id.About_id:
                 Toast.makeText(getApplicationContext(),"This app is a student project for Udacity",Toast.LENGTH_LONG).show();
                 return true;
-            case R.id.local_id:
-                startActivity(new Intent(this, Local.class));
+            // Respond to a click on the "Local" menu option
+            case R.id.search_id:
+                startActivity(new Intent(this, TrackListItem.class));
                 return true;
+            // Respond to a click on the "Genre" menu option
             case R.id.genres_id:
                 startActivity(new Intent(this, Genres.class));
                 return true;
@@ -42,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);}
 
-
+    // Set a onClickListener  on Search  Music by Genre
     public void openGenresctivity (View view){
-        ImageView genres = (ImageView) findViewById(R.id.genres);
+        Button genres = (Button) findViewById(R.id.button_genre);
         genres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,18 +57,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(numbersIntent);
             }
 
-        });
-    }
-
-    public void openLocalActivity (View view){
-        ImageView local = (ImageView) findViewById(R.id.local);
+        });}
+    // Set a onClickListener  on Search  Music by AllMusic
+    public void openAllMusicActivity (View view){
+        Button local = (Button) findViewById(R.id.button_all_music);
         local.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, Local.class);
+                Intent numbersIntent = new Intent(MainActivity.this, AllMusicActivity.class);
                 startActivity(numbersIntent);
             }
 
-        });
-    }
+        });}
 }

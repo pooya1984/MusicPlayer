@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+<!-- Options menu for the AllActivity -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
 
     <item
         android:id="@+id/About_id"
         android:title="about"/>
     <item
-        android:id="@+id/local_id"
-        android:title="Local"/>
+        android:id="@+id/search_id"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="always"
+        android:title="" />
 
     <item
         android:id="@+id/genres_id"

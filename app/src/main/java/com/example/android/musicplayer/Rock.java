@@ -6,15 +6,31 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Rock extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rock);
+        setContentView(R.layout.all_music_activity);
+
+
+        //Create the list of tracks
+        ArrayList<Track> tracks = new ArrayList<Track>();
+
+        //Add the tracks to the list
+        tracks.add(new Track("Hard Wired","Metallica","ROCK", 0, R.drawable.maxresdefault));
+
+        //Display the list by using a TrackListAdapter
+        TrackListAdapter itemsAdapter = new TrackListAdapter(this, tracks);
+        ListView listView = (ListView) findViewById(R.id.list_all_music);
+        listView.setAdapter(itemsAdapter);
     }
+
 
 
     // menu code ///////////////////////////////////////////////////
@@ -27,12 +43,12 @@ public class Rock extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected (MenuItem item){
-        switch (item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.About_id:
-                Toast.makeText(getApplicationContext(),"This app is a student project for Udacity",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "This app is a student project for Udacity", Toast.LENGTH_LONG).show();
                 return true;
-            case R.id.local_id:
+            case R.id.search_id:
                 startActivity(new Intent(this, Local.class));
                 return true;
             case R.id.genres_id:
@@ -40,9 +56,9 @@ public class Rock extends AppCompatActivity {
                 return true;
             default:
         }
-        return super.onOptionsItemSelected(item);}
+        return super.onOptionsItemSelected(item);
+    }
     ///////////////////////////////////////////////////////////////////
-
 
 
 }

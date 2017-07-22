@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MusicPlayer</string>
+    <string name="search_music_by_genre">search by Genre</string>
+    <string name="search_music_all">search all Music</string>
+    <string name="all_music_explain">This activity is for search All music</string>
+    <string name="song_track">Track information</string>
+    <string name="dollars">$</string>
+    <string name="buyTrack">Send Song to Basket</string>
+    <string name="genre_activity">This Page is for Genre</string>
 </resources>
