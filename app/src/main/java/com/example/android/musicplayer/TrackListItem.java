@@ -1,0 +1,60 @@
+package com.example.android.musicplayer;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class TrackListItem extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.track_list_item);
+
+
+        //Get the details of the track from the previous activity
+        Bundle b = getIntent().getExtras();
+        if (b != null) {
+            String trackGenre = b.getString("trackGenre");
+            String singer = b.getString("singer");
+            String trackTitle = b.getString("trackTitle");
+            int trackPrice = b.getInt("trackPrice");
+            int trackImage = b.getInt("trackImage");
+
+
+            //Set the title of the track
+            this.setTitle(trackTitle);
+
+
+            //Display the track image
+            ImageView albumImageView = (ImageView) findViewById(R.id.track_image);
+            albumImageView.setImageResource(trackImage);
+
+            //Display the track title
+            TextView trackTitleTextView = (TextView) findViewById(R.id.track_title);
+            trackTitleTextView.setText(trackTitle);
+
+            //Display the track artist
+            TextView artistTextView = (TextView) findViewById(R.id.track_singer);
+            artistTextView.setText(singer);
+
+            //Display the genre title
+            TextView genreTitleTextView = (TextView) findViewById(R.id.genre_title);
+            genreTitleTextView.setText(trackGenre);
+
+            //Get the price textView and the buy button
+            TextView trackPriceTextView = (TextView) findViewById(R.id.track_price);
+            Button buyButton = (Button) findViewById(R.id.buy_button);
+
+            //If price is not 0, so if it is not bought yet, display the price and the buy button
+            if (trackPrice != 0) {
+                //Display the track price and the set the text of the button to "Buy this track now"
+                trackPriceTextView.setText(getString(R.string.dollars) + trackPrice);
+                buyButton.setText(getString(R.string.buyTrack));
+
+            }
+        }
+    }
+}
