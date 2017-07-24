@@ -10,4 +10,5 @@
     <string name="playTrack">try another Time</string>
     <string name="submit">submit</string>
     <string name="total">total price</string>
+    <string name="sending_message">Information sent to your E-MAIL. Please check your E-Mail</string>
 </resources>

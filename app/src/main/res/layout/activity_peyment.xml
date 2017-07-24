@@ -104,19 +104,17 @@
             android:text="$10" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/purchase_form"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
 
-        <EditText
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            style="@style/TextStyle"
             android:id="@+id/email_field"
+            android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-MAIL"
+            android:text="@string/sending_message"
             android:inputType="textEmailAddress" />
 
-    </LinearLayout>
 </RelativeLayout>
